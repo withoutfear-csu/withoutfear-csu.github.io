@@ -141,7 +141,7 @@ keywords: MySQL, Explain
 
 - 表结构
 
-<img src="/MySQL/t_actor.png" style="zoom:80%;" />
+<img src="/images/posts/MySQL/t_actor.png" style="zoom:80%;" />
 
 - 插入数据
 
