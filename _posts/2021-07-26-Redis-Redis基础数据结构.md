@@ -26,9 +26,9 @@ keywords: Redis
 
 ```shell
 set [key] [val] # 存储键值对
-get [key] 		# 按取键取值
-exists [key] 	# 判断是否存在键
-del [key] 		# 删除键值对
+get [key] # 按取键取值
+exists [key] # 判断是否存在键
+del [key] # 删除键值对
 ```
 
 
@@ -36,8 +36,8 @@ del [key] 		# 删除键值对
 **批量键值对**: 可以批量对多个字符串进⾏读写，节省⽹络耗时开销
 
 ```shell
-mset [key_1] [val_1] [key_2] [val_2] (...) 	# 批量存储键值对
-mget [key_1] [key_2] [key_3] (...) 			# 返回⼀个列表
+mset [key_1] [val_1] [key_2] [val_2] (...) # 批量存储键值对
+mget [key_1] [key_2] [key_3] (...) # 返回⼀个列表
 ```
 
 
@@ -45,9 +45,9 @@ mget [key_1] [key_2] [key_3] (...) 			# 返回⼀个列表
 **过期和set命令扩展**: 可以对 key 设置过期时间，到点⾃动删除，这个功能常⽤来控制缓存的失效时间
 
 ```shell
-expire [key] [t] 		# 设置 key t秒后过期
-setex [key] [t] [val] 	# 存储键值对，同时设置过期时间
-setnx [key] [val] 		# 若 key 不存在，则执⾏ set
+expire [key] [t] # 设置 key t秒后过期
+setex [key] [t] [val] # 存储键值对，同时设置过期时间
+setnx [key] [val] # 若 key 不存在，则执⾏ set
 ```
 
 
@@ -55,8 +55,8 @@ setnx [key] [val] 		# 若 key 不存在，则执⾏ set
 **计数**:  如果 value 值是⼀个整数，还可以对它进⾏⾃增操作。⾃增是有范围的，它的范围是signed long 的最⼤最 ⼩值，超过了这个值，Redis 会报错。
 
 ```shell
-incr [key] 			# 将 key 对应的 val + 1
-incrby [key] [num] 	# 将 key 对应的 val + num
+incr [key] # 将 key 对应的 val + 1
+incrby [key] [num]	# 将 key 对应的 val + num
 ```
 
 ## list 
@@ -76,9 +76,9 @@ incrby [key] [num] 	# 将 key 对应的 val + num
 **当作队列使用**
 
 ```shell
-rpush [key] [val_1] [val_2] [val_3] (...) 	# 创建名为 [key] 的 list
-llen [key] 									# 查看 list [key] 的⻓度
-lpop [key]									# 从 list 左侧出队
+rpush [key] [val_1] [val_2] [val_3] (...) # 创建名为 [key] 的 list
+llen [key] # 查看 list [key] 的⻓度
+lpop [key] # 从 list 左侧出队
 ```
 
 
@@ -86,7 +86,7 @@ lpop [key]									# 从 list 左侧出队
 **当作栈使用**
 
 ```shell
-rpush [key] [val_1] [val_2] [val_3] (...) 	# 创建名为 [key] 的 list
+rpush [key] [val_1] [val_2] [val_3] (...) # 创建名为 [key] 的 list
 rpop [key]
 ```
 
@@ -96,10 +96,10 @@ rpop [key]
 
 ```shell
 lindex
-lrange [key] [start] [end] 	# 获取从 [start] 开始，[end] 结束的所有元素：lrang [key] 0 -1 获取所有元素
-ltrim [key] [start] [end] 	# 保留 [key] 中 [start] ~ [end] 范围内的元素(闭区间)
-lrem [key] [max_num] [val]	# 删除 [key] 中 “值=[val]” 的元素，最多删除 [max_num]个
-lset [key] [index] [val] 	# 将 [key] 中索引为 [index] 的值，更改为val
+lrange [key] [start] [end] # 获取从 [start] 开始，[end] 结束的所有元素：lrang [key] 0 -1 获取所有元素
+ltrim [key] [start] [end] # 保留 [key] 中 [start] ~ [end] 范围内的元素(闭区间)
+lrem [key] [max_num] [val] # 删除 [key] 中 “值=[val]” 的元素，最多删除 [max_num]个
+lset [key] [index] [val] # 将 [key] 中索引为 [index] 的值，更改为val
 ```
 
 
@@ -135,8 +135,8 @@ lset [key] [index] [val] 	# 将 [key] 中索引为 [index] 的值，更改为val
 **添加元素**
 
 ```shell
-hset [map] [key] [val] 								# 向map中⼀次增加⼀个
-hmset [map] [key_1] [val_1] [key_2] [val_2] ... 	# 向map中批量增加元素
+hset [map] [key] [val] # 向map中⼀次增加⼀个
+hmset [map] [key_1] [val_1] [key_2] [val_2] ... # 向map中批量增加元素
 ```
 
 
@@ -144,12 +144,12 @@ hmset [map] [key_1] [val_1] [key_2] [val_2] ... 	# 向map中批量增加元素
 **获取 键\值**
 
 ```shell
-hget [map] [key] 					# 获取key 对应的 val
-hmget [map] [key_1] [key_2] ... 	# 批量获取 keys 对应的 vals
-hgetall [map] 						# 获取 entries
-hlen [map] 							# 获取 map 中 entry 的数量
-hkeys [map] 						# 只获取 keys
-hvals [map] 						# 只获取 vals
+hget [map] [key] # 获取key 对应的 val
+hmget [map] [key_1] [key_2] ... # 批量获取 keys 对应的 vals
+hgetall [map] # 获取 entries
+hlen [map] # 获取 map 中 entry 的数量
+hkeys [map] # 只获取 keys
+hvals [map] # 只获取 vals
 ```
 
 
@@ -157,7 +157,7 @@ hvals [map] 						# 只获取 vals
 **删除元素**
 
 ```shell
-hdel [map] [key_1] [key_2] ... 		# 批量删除和逐⼀删除 ⽤的是同⼀个指令
+hdel [map] [key_1] [key_2] ... # 批量删除和逐⼀删除 ⽤的是同⼀个指令
 ```
 
 
@@ -165,7 +165,7 @@ hdel [map] [key_1] [key_2] ... 		# 批量删除和逐⼀删除 ⽤的是同⼀�
 **判断元素是否存在**
 
 ```shell
-hexists [map] [key] 				# 判断map中是否存在 key
+hexists [map] [key] # 判断map中是否存在 key
 ```
 
 
@@ -173,7 +173,7 @@ hexists [map] [key] 				# 判断map中是否存在 key
 **作为计数器的使用方式**
 
 ```shell
-hincrby [map] [key] [num] 			# 将 key 对应的 count + num，(count默认从0开始)，若val 不是整数会报错
+hincrby [map] [key] [num] # 将 key 对应的 count + num，(count默认从0开始)，若val 不是整数会报错
 ```
 
 
@@ -201,9 +201,9 @@ sadd [map] [val_1] [val_2] ... # 批量和单个操作使⽤同⼀个指令
 **获取元素**
 
 ```shell
-smembers [set] 				# 列出所有元素
-srandmember [set] [count] 	# 获取随机count个元素，如果不提供count参数，默认为1
-scard [set] 				# 获取当前 set 中的元素总数
+smembers [set] # 列出所有元素
+srandmember [set] [count] # 获取随机count个元素，如果不提供count参数，默认为1
+scard [set] # 获取当前 set 中的元素总数
 ```
 
 
@@ -211,8 +211,8 @@ scard [set] 				# 获取当前 set 中的元素总数
 **删除元素**
 
 ```shell
-spop [set] 						# 随机删除⼀个元素
-srem [set] [val_1] [val_2] ... 	# 删除⼀到多个元素
+spop [set] # 随机删除⼀个元素
+srem [set] [val_1] [val_2] ... # 删除⼀到多个元素
 ```
 
 
@@ -220,7 +220,7 @@ srem [set] [val_1] [val_2] ... 	# 删除⼀到多个元素
 **判断元素是否存在** 
 
 ```shell
-sismember [set] [val] 			# 判断 set 中是否存在 val
+sismember [set] [val] # 判断 set 中是否存在 val
 ```
 
 
@@ -244,9 +244,9 @@ zadd [zset] [score_1] [val_1] ... # 添加⼀个或多个元素
 **获取排名和分数**
 
 ```shell
-zscore [zset] [val] 	# 获取 val 对应的分数
-zrank [zset] [val] 		# 获取 val 分数从低到⾼的排名(从0开始计数)
-zrevrank [zset] [val] 	# 获取 val 分数从⾼到低的排名
+zscore [zset] [val] # 获取 val 对应的分数
+zrank [zset] [val] # 获取 val 分数从低到⾼的排名(从0开始计数)
+zrevrank [zset] [val] # 获取 val 分数从⾼到低的排名
 ```
 
 
@@ -270,7 +270,7 @@ zrevrangebyscore [zset] [end] [start] # 注意：end 和 start 的次序反了�
 **删除元素**
 
 ```shell
-zrem [zset] [val_1] [val_2] ... 		# 删除⼀个或多个元素
+zrem [zset] [val_1] [val_2] ... # 删除⼀个或多个元素
 zremrangebyrank [zset] [start] [end] 	# 删除排名在 [strat, end] 之间的元素
 zremrangebyscore [zset] [start] [end] 	# 删除分数在 [start, end] 之间的元素
 ```
