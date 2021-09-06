@@ -190,7 +190,7 @@ public void run() {
 }
 ```
 
-### **run方法的主要流程**
+### run方法的主要流程
 
 ![run流程](\images\posts\Java-concurrency\run流程.jpg)
 
