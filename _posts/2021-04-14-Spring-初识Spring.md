@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Spring-学习笔记-day01
+title: Spring-初识Spring
 categories: Spring
 description: 初识Spring,重点理解什么是IoC
-keywords: Spring, SSM, IoC
+keywords: Spring
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring-学习笔记-day02
+title: Spring-IoC的xml配置
 categories: Spring
 description: 了解IoC的xml配置使用
 keywords: Spring, SSM, IoC

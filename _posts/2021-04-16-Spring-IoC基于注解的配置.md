@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring-学习笔记-day03
+title: Spring-IoC基于注解的配置
 categories: Spring
 description: 了解IoC基于注解的配置
 keywords: Spring, SSM, IoC

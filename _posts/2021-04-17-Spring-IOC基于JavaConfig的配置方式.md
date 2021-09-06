@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Spring-学习笔记-day04
+title: Spring-IOC基于JavaConfig的配置方式
 categories: Spring
 description: 了解IoC基于JavaConfig的配置方式
-keywords: Spring, SSM, IoC
+keywords: Spring
 ---
 
 
@@ -78,8 +78,6 @@ public void test02() {
 ![](/images/posts/Spring/inject_inner_bean.png)
 
 <img src="/images/posts/Spring/inject_bean.png" style="zoom:80%;" />
-
-
 
 ​	证明Bean注册成功，且成功依赖外部Bean和内部Bean。
 
